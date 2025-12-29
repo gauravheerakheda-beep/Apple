@@ -1,4 +1,4 @@
-# 🎵 AloneMusic
+# 🎵 Apple Music
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
@@ -9,7 +9,7 @@
 
 
 ## 🚀 Introduction
-**AloneMusic** is a Python-based **music bot/service** that allows users to play, pause, skip, and manage playlists with ease.  
+**Apple Music** is a Python-based **music bot/service** that allows users to play, pause, skip, and manage playlists with ease.  
 It’s designed to be lightweight, fast, and customizable.  
 
 ---
@@ -25,7 +25,7 @@ It’s designed to be lightweight, fast, and customizable.
 ---
 ## ❤️ Support
 
-💬 **Telegram:** [AloneMusic](https://t.me/TheTeamHacker)  
+💬 **Telegram:** [Apple Music](https://t.me/+1nsZdfYwS2U4ZGI1)  
 📂 **GitHub Issues:** [Report a Problem](https://github.com/TheAloneTeam/AloneMusic/issues/new)
 
 ---
@@ -84,7 +84,7 @@ Click this button to deploy instantly on **Heroku**:
 
 - Run the Bot:  
   ```bash
-  python3 -m AloneMusic
+  python3 -m Apple Music 
   ```
 
 - Detach from the **tmux** Session (Bot keeps running):  
