@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: AloneMusic Bot
+    name: Apple Music Bot
     env: python
     plan: free
     region: oregon
@@ -8,17 +8,17 @@ services:
     startCommand: python3 -m AloneMusic
     autoDeploy: true
     envVars:
-      - key: API_ID
+      - key: 29568441
         value: ""
-      - key: API_HASH
+      - key: b32ec0fb66d22da6f77d355fbace4f2a
         value: ""
-      - key: BOT_TOKEN
+      - key: 8282441129:AAGD2HvKeDJwvt3YvNgQhUxgUkLRrwWuor0
         value: ""
-      - key: LOGGER_ID
+      - key: 1003335605420
         value: ""
-      - key: MONGO_DB_URI
+      - key: mongodb+srv://rj5706603:O95nvJYxapyDHfkw@cluster0.fzmckei.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
         value: ""
-      - key: OWNER_ID
+      - key: 7044170320
         value: ""
-      - key: STRING_SESSION
+      - key: BQE1hZwAJPbNjLeii-iqS_IaG2JZRU1IY68DM63MutVW3Sw31cBroeVYEFF2xTdrOz-eHcodwiz4s7sDDLEBgcZaE4nOWPUTCRd59IqMP4bf02dXei4UCkrTEDtT1MNa35Br5OfFrvcPnuvutaW0fuxU2o393j1_o4OSu4Z4ldlVJ8E8sMGEeh7C9Wh1RrqmT0Z00-Tx-1ItTNJtNTA929OWwrhTqTBLdY4vZAXS9lBTB-3I2I3ZKfonQofFv8aMo1AbXIxVrKZmOAY2QoPuFimaGQVt7ITCYvx7_GfVoEWiZr-u_HuJvtxdxJeUvlgSv3HyQ6RKNj5fvTNZBPpuWs-yZ2GHMgAAAAH8kM1kAA
         value: ""
