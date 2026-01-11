@@ -19,12 +19,12 @@ py-tgcalls==2.2.8
 motor>=3.4.0
 psutil>=5.9.8
 heroku3>=5.2.1
-Pillow==12.0.0
+Pillow==12.1.0
 speedtest-cli>=2.1.3
 yt-dlp>=2024.8.6
 youtube-search>=2.1.2
 youtube-search-python>=1.6.6
-py-yt-search==0.5.5
+py-yt-search==0.5.7
 spotipy>=2.24.0
 openai>=1.40.0
 prettytable>=3.12.0

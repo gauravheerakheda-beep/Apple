@@ -7,11 +7,31 @@
 #
 # All rights reserved.
 
+import os
+
 from pyrogram.enums import ParseMode
 
 from AloneMusic import app
 from AloneMusic.utils.database import is_on_off
 from config import LOGGER_ID
+
+
+async def send_large_error(trace, caption, filename):
+    with open(filename, "w") as f:
+        f.write(trace)
+    try:
+        await app.send_document(
+            chat_id=LOGGER_ID,
+            document=filename,
+            caption=caption,
+            parse_mode=ParseMode.HTML,
+        )
+    except Exception:
+        pass
+    try:
+        os.remove(filename)
+    except Exception:
+        pass
 
 
 async def play_logs(message, streamtype):

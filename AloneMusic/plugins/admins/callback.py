@@ -12,6 +12,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+import config
 from AloneMusic import YouTube, app
 from AloneMusic.core.call import Alone
 from AloneMusic.misc import SUDOERS, db
