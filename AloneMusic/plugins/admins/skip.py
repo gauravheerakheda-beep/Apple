@@ -22,11 +22,21 @@ from AloneMusic.utils.thumbnails import get_thumb
 from config import BANNED_USERS
 
 
+async def delete_old_message(chat_id: int):
+    try:
+        old = db.get(chat_id, [{}])[0].get("mystic")
+        if old:
+            await old.delete()
+    except:
+        pass
+
+
 @app.on_message(
     filters.command(["skip", "cskip", "next", "cnext"]) & filters.group & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def skip(cli, message: Message, _, chat_id):
+    await delete_old_message(chat_id)
     if not len(message.command) < 2:
         loop = await get_loop(chat_id)
         if loop != 0:
@@ -120,11 +130,12 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await Alone.skip_stream(chat_id, link, video=status, image=image)
+            await Aarumi.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
         img = await get_thumb(videoid)
+        await delete_old_message(chat_id)
         run = await message.reply_photo(
             photo=img,
             has_spoiler=True,
@@ -159,6 +170,7 @@ async def skip(cli, message: Message, _, chat_id):
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, chat_id)
         img = await get_thumb(videoid)
+        await delete_old_message(chat_id)
         run = await message.reply_photo(
             photo=img,
             has_spoiler=True,
@@ -179,6 +191,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
+        await delete_old_message(chat_id)
         run = await message.reply_photo(
             photo=config.STREAM_IMG_URL,
             has_spoiler=True,
@@ -203,13 +216,13 @@ async def skip(cli, message: Message, _, chat_id):
             return await message.reply_text(_["call_6"])
         if videoid == "telegram":
             button = stream_markup(_, chat_id)
+            await delete_old_message(chat_id)
             run = await message.reply_photo(
                 photo=(
                     config.TELEGRAM_AUDIO_URL
                     if str(streamtype) == "audio"
                     else config.TELEGRAM_VIDEO_URL
                 ),
-                has_spoiler=True,
                 caption=_["stream_1"].format(
                     config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
                 ),
@@ -219,13 +232,13 @@ async def skip(cli, message: Message, _, chat_id):
             db[chat_id][0]["markup"] = "tg"
         elif videoid == "soundcloud":
             button = stream_markup(_, chat_id)
+            await delete_old_message(chat_id)
             run = await message.reply_photo(
                 photo=(
                     config.SOUNCLOUD_IMG_URL
                     if str(streamtype) == "audio"
                     else config.TELEGRAM_VIDEO_URL
                 ),
-                has_spoiler=True,
                 caption=_["stream_1"].format(
                     config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
                 ),
@@ -236,6 +249,7 @@ async def skip(cli, message: Message, _, chat_id):
         else:
             button = stream_markup(_, chat_id)
             img = await get_thumb(videoid)
+            await delete_old_message(chat_id)
             run = await message.reply_photo(
                 photo=img,
                 has_spoiler=True,
