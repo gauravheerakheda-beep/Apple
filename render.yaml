@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: Apple Music Bot
+    name: VIP Music Bot
     env: python
     plan: free
     region: oregon
@@ -12,7 +12,7 @@ services:
         value: ""
       - key: b32ec0fb66d22da6f77d355fbace4f2a
         value: ""
-      - key: 8282441129:AAGD2HvKeDJwvt3YvNgQhUxgUkLRrwWuor0
+      - key: 8334550987:AAF38ar1-XvlwIGR6o2Ut1imM8KhB6H0XUk
         value: ""
       - key: 1003335605420
         value: ""
